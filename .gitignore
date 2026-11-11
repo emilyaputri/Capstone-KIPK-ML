@@ -1,0 +1,25 @@
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+*.pyc
+*.db
+
+# Node
+node_modules/
+frontend/dist/
+
+# Env & rahasia
+.env
+.env.local
+.env.*
+!.env.development
+Kredensial.md
+
+# Editor / OS
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel/

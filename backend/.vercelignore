@@ -1,0 +1,7 @@
+# Jangan upload ke Vercel (hemat waktu & ukuran bundle)
+venv/
+__pycache__/
+*.db
+data/
+*.csv
+.git/

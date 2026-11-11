@@ -1,0 +1,6 @@
+# Dependencies tambahan untuk training/analisis LOKAL saja
+# (tidak dipasang di Vercel — lihat requirements.txt)
+-r requirements.txt
+imbalanced-learn>=0.12
+shap>=0.46
+matplotlib>=3.8
