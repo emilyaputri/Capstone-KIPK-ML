@@ -158,8 +158,26 @@ Model di-pickle dengan scikit-learn 1.8.0, environment memakai 1.7.2.
 Hanya warning — `LabelEncoder` kompatibel dan prediksi tetap valid.
 Untuk menghilangkan: `pip install scikit-learn==1.8.0` (opsional).
 
-### Health check `/health` mengembalikan 404
+### Health check `/health`
 
-Endpoint `/health` tidak didefinisikan di API ini. Gunakan `GET /` atau
-`GET /docs` untuk memverifikasi server hidup.
+`GET /health` → `{"status": "ok"}` (ditambahkan untuk monitoring).
+Alternatif: `GET /` atau `GET /docs`.
+
+---
+
 # Capstone-KIPK-ML
+
+## Deployment (Vercel)
+
+| Komponen | URL | Root |
+|---|---|---|
+| Frontend (Vite) | https://kipk-frontend.vercel.app | `frontend/` |
+| API (FastAPI) | https://kipk-api.vercel.app | `backend/` |
+| Database | Supabase Postgres (pooler `aws-1-ap-northeast-1`) | — |
+
+Env vars (Vercel dashboard → Project → Settings → Environment Variables):
+
+- **kipk-api:** `DATABASE_URL`, `SECRET_KEY`, `ADMIN_PASSWORD`, `ALLOWED_ORIGINS`
+- **kipk-frontend:** `VITE_API_URL=https://kipk-api.vercel.app` (build-time)
+
+Login produksi: `admin` / `admin123`. Panduan lengkap: [DEPLOYMENT.md](DEPLOYMENT.md).

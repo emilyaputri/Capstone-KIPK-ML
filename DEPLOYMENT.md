@@ -1,5 +1,12 @@
 # Plan Deployment KIPK-ML ke Vercel
 
+> **STATUS (11 Nov 2026): SEDELANA DIIMPLEMENTASIKAN ✅**
+> - Frontend: https://kipk-frontend.vercel.app — API: https://kipk-api.vercel.app
+> - Database: **Supabase Postgres** (bukan Neon — Supabase yang tersedia; pola sama)
+> - Smoke test produksi lulus: validate 829 baris (2,5 dtk), predict + SHAP
+>   (14,2 dtk), export Excel, kuota, persistensi lolos redeploy.
+> - Dokumen di bawah tetap berlaku sebagai referensi analisis & limit.
+
 > Dokumen ini berisi analisis kesiapan, perubahan kode yang diperlukan, dan
 > langkah deployment terukur berdasarkan audit codebase + limit Vercel (Nov 2026).
 
