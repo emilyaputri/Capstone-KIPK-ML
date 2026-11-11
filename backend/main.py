@@ -20,7 +20,7 @@ import hmac
 import time
 
 # Database
-from database import init_db, get_db, list_sessions_from_db, ActivityLog
+from database import init_db, get_db, list_sessions_from_db, ActivityLog, IS_SQLITE
 
 app = FastAPI(
     title="KIPK-ML Admin Dashboard API",
@@ -210,9 +210,14 @@ async def root():
     return {
         "message": "KIPK-ML Admin Dashboard API",
         "version": "2.0.0",
-        "database": "SQLite (persistent)",
+        "database": "SQLite (local)" if IS_SQLITE else "PostgreSQL (managed)",
         "docs": "/docs",
     }
+
+
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
 
 
 if __name__ == "__main__":
